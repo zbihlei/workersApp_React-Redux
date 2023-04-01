@@ -1,0 +1,40 @@
+{
+  "clients": [
+    {
+      "id": 1,
+      "name": "mykhailo zbihlei",
+      "position": "junior",
+      "salary": 500
+    },
+    {
+      "id": 2,
+      "name": "sergei ivanov",
+      "position": "middle",
+      "salary": 700
+    },
+    {
+      "id": 3,
+      "name": "sergei sidorov",
+      "position": "senior",
+      "salary": 1200
+    }
+  ],
+  "filters": [
+    {
+      "id": "all",
+      "name": "all"
+    },
+    {
+      "id": "junior",
+      "name": "junior"
+    },
+    {
+      "id": "middle",
+      "name": "middle"
+    },
+    {
+      "id": "senior",
+      "name": "senior"
+    }
+  ]
+}
