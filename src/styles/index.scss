@@ -1,126 +1,105 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
 @import "bootstrap/dist/css/bootstrap.min.css";
 
-$font_base: 'Roboto';
-$colorbg1: rgba(168, 145, 145, 1);
-$colorbg2: rgba(217, 217, 217, 1);
+$font_base: 'Space Mono', monospace;
+$colorbg1: rgba(199, 174, 73, 20%);
+$colorbg2: rgb(225, 216, 216, 40%);
 
 
 @mixin block {
     background: $colorbg2;
-    width: 800px;
     height: auto;
     margin: 0 auto;
-    margin-top: 40px;
-    border-radius: 5px;
 }
 body {
     font-family: $font_base;
 }
 
-.header{
-    @include block;
-    background-color: $colorbg1;
-        p{
-        margin: 0;
-        text-align: center;
-        font-size: 40px;
-        color: #FFFFFF;
-    }
+.container {
+    width: 60%;
+    margin: 0 auto;
 }
 
-.panel_container {
-    list-style: none;
-    background: $colorbg2;
-    color: white;  
-    width: 800px;
-    height: auto;
-    margin: 40px auto 0 auto;
-    border-radius: 5px;
+.header{
+    @include block;
+    width: 100%;
+    background-color: $colorbg1;
+    margin: 40px 0;
     text-align: center;
-    li{
-       margin: 20px 0;
-       border-radius: 5px;
-       background-color: $colorbg1;
-    }
-    .itemClient{
-        display: inline-block;
-        width: 20%;
-        margin-right: 50px; 
+    border-radius: 15px;
+    font-size: 40px;
+}
+
+.workerPanelContainer {
+    background: $colorbg2;
+    color: black;  
+    width: 100%;
+    text-align: center;
+    padding: 40px;
+    margin-bottom: 40px;
+    border: 1px solid $colorbg2;
+  
+    .itemWorker{
+        width: 100%;
+        display: flex;
+        justify-content:space-around;
+        span{
+        width: 100%;
+       }
     }
     button{
-        width: 100px;
-        height: 10px;
-        float: right;
-        color: black;
-        background-color: $colorbg1;
         border: none;
-        border-radius: 5px;
+        width: 40%;
+        background-color: inherit;
     }   
 }
 
-.clientForm{
+form {
     @include block;
-
-    .formField{
-        position: relative;
-        display: inline-block;
-        width: 100%;
-        padding: 20px;
-    }
-    label {
-        color: black;
-        width: 40%;
-        text-align: center;
-    }
-    input{
-        background-color: $colorbg1;
-        border: none;
-        border-radius: 5px;
-        width: 50%;
-        float: right;
-        margin-right: 50px;
-    }
-    ::placeholder{
-        float: right;
-        color: white;
-    }
-    button{
-        background-color: $colorbg1;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        width: 100px;
-        margin-right: 50px;
-        float: right;
-    } 
-    .errorValidate{
-        position: absolute;
-        right: 70px;
-        color: white;
-    }
+    margin-bottom: 40px;
+    padding: 40px;
+    
 }
 
+.workerForm{
+    display: flex;
+    justify-content: space-between;
+
+        .formField_middle{
+            margin: 0 10px!important;
+        }
+        label {
+            width: 100%;
+            text-align: center;
+            color: black;
+        }
+        input{  
+            width: 100%;
+            background-color: $colorbg1;
+            border: 1px solid $colorbg2;
+        }
+        .errorValidate{
+            text-align: center;
+            
+        } 
+}
+    .btnSub{
+        display: block;
+        margin: 20px auto;
+        background-color: none;
+        border: 1px solid $colorbg2;
+    }  
+   
 .filtersWrapp{
     @include block;
-    padding-left: 50px;
-    margin-bottom: 40px;
+        display: flex;
+        justify-content: space-around;
+        padding: 20px;
+        margin-bottom: 40px;
+        
     button {
-        color: white;
-        width: auto;
         background-color: $colorbg1;
         border: none;
-        border-radius: 5px;
-        margin: 20px 40px 40px 0;
-        padding: 5px;
     }
-    p{
-        color: black;
-        text-align: center;
-        padding-top: 20px;
-    }
-    .lastBtn {
-        float: right;
-        margin-right: 15px;
-    }
+   
 }

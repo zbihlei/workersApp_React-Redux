@@ -1,7 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 import {apiSlice} from '../api/apiSlice';
-import filters from '../features/clientsFilter/clientsFilterSlice';
-
+import filters from '../features/workersFilter/WorkersFilterSlice';
 
 const store = configureStore({
   reducer: {filters,

@@ -2,11 +2,11 @@ import '../../styles/index.scss'
 import {Formik, Form, Field, ErrorMessage} from 'formik';
 import * as Yup from 'yup';
 import { v4 as uuidv4 } from 'uuid';
-import { useCreateClientMutation } from '../../api/apiSlice';
+import { useCreateWorkerMutation } from '../../api/apiSlice';
 
-const ClientsForm = ()=>{
+const WorkersForm = ()=>{
 
-    const [createClient] = useCreateClientMutation();
+    const [createWorker] = useCreateWorkerMutation();
 
     const onSubmitHandler =(value)=>{
     
@@ -16,7 +16,7 @@ const ClientsForm = ()=>{
             position: value.position,
             salary: value.salary
         }
-        createClient(newCLient);
+        createWorker(newCLient);
     
     }
 
@@ -43,9 +43,11 @@ const ClientsForm = ()=>{
         >
 
             
-    <Form className='clientForm'>
-        <div className='formField'>
-            <label htmlFor='name' className='formFieldLAbel'>NAME</label>
+    <Form>
+    <div className="workerForm">
+        <div>
+          
+            <label htmlFor='name'>NAME</label>
             <Field type='text' 
                    name ='name'
                    className='formFieldInput'
@@ -53,9 +55,11 @@ const ClientsForm = ()=>{
                    
             />
         <ErrorMessage name='name' className='errorValidate' component='div'/>
-        </div>
-        <div className='formField'>
-            <label htmlFor='position' className='formFieldLAbel'>POSITION</label>
+            </div>
+  
+        <div className='formField_middle'>
+      
+            <label htmlFor='position'>POSITION</label>
             <Field type='text' 
                    name ='position'
                    className='formFieldInput'
@@ -63,9 +67,11 @@ const ClientsForm = ()=>{
                    
             />
         <ErrorMessage name='position' className='errorValidate' component='div'/>
-        </div>
-        <div className='formField'>
-            <label htmlFor='salary' className='formFieldLAbel'>SALARY</label>
+            </div>
+        
+        < div>
+        
+            <label htmlFor='salary'>SALARY</label>
             <Field type='text' 
                    name ='salary'
                    placeholder = '$'
@@ -74,10 +80,9 @@ const ClientsForm = ()=>{
                    
             />
          <ErrorMessage name='salary' className='errorValidate' component='div'/>
-        </div>
-        <div className='formField'>
-        <button type='submit'>ADD</button>
-        </div>
+            </div>
+    </div>
+    <button className='btnSub' type='submit'>ADD</button> 
     </Form>
         </Formik>     
     );
@@ -85,4 +90,4 @@ const ClientsForm = ()=>{
 }
 
 
-export default ClientsForm;
+export default WorkersForm;

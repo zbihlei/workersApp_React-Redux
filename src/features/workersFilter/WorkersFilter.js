@@ -1,10 +1,10 @@
 import '../../styles/index.scss';
 import {useGetFiltersQuery} from '../../api/apiSlice';
-import { activeFilterChanged, highSalaryShow } from './clientsFilterSlice';
+import { activeFilterChanged, highSalaryShow } from './WorkersFilterSlice';
 import { useDispatch} from 'react-redux';
 
 
-const ClientsFilter = ()=>{
+const WorkersFilter = ()=>{
 
      const {data: filters=[], isLoading, isSuccess} =useGetFiltersQuery();
      const dispatch = useDispatch();
@@ -26,7 +26,7 @@ const ClientsFilter = ()=>{
 
     return (
             <div className='filtersWrapp'>
-                <p>SORTER BY</p>
+                <span>SORTED BY:</span>
                 {isLoading? <h5 
                     style={{'textAlign': 'center',
                             'display': 'block', 
@@ -43,4 +43,4 @@ const ClientsFilter = ()=>{
 
 }
 
-export default ClientsFilter;
+export default WorkersFilter;

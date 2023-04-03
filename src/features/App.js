@@ -1,19 +1,22 @@
 import React from 'react';
-import './App.scss';
-import Header from './header/Header';
-import ClientsPanel from './clientsPanel/ClientsPanel';
-import ClientsForm from './clientsForm/ClientsForm';
-import ClientsFilter from './clientsFilter/ClientsFilter';
+import '../styles/index.scss';
+import WorkerPanel from './workersPanel/WorkersPanel';
+import WorkersForm from './workersForm/WorkersForm';
+import WorkersFilter from './workersFilter/WorkersFilter';
 
 const App =()=> {
 
   return (
-    <>
-         <Header/>
-        <ClientsPanel/>
-        <ClientsForm/>
-        <ClientsFilter/>
-    </>
+
+<div className="container">
+<div className='header'>
+            WORKERS
+        </div>
+
+        <WorkerPanel/>
+        <WorkersForm/>
+        <WorkersFilter/>
+</div>
 
     )
 }

@@ -1,5 +1,5 @@
 {
-  "clients": [
+  "workers": [
     {
       "id": 1,
       "name": "mykhailo zbihlei",
@@ -14,7 +14,7 @@
     },
     {
       "id": 3,
-      "name": "sergei sidorov",
+      "name": "denis sidorov",
       "position": "senior",
       "salary": 1200
     }

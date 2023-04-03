@@ -4,26 +4,26 @@ import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react';
 export const apiSlice = createApi({
     reducerPath: 'api',
     baseQuery: fetchBaseQuery({baseUrl: 'http://localhost:3001'}),
-    tagTypes: ['Clients'],
+    tagTypes: ['Workers'],
     endpoints: builder => ({
-        getClients: builder.query({
-            query: () => '/clients',
-            providesTags: ['Clients']
+        getWorkers: builder.query({
+            query: () => '/workers',
+            providesTags: ['Workers']
         }),
-        deleteClients: builder.mutation({
+        deleteWorker: builder.mutation({
             query: id=>({
-                url: `/clients/${id}`,
+                url: `/workers/${id}`,
                 method: 'DELETE'
             }),
-            invalidatesTags: ['Clients']
+            invalidatesTags: ['Workers']
         }),
-        createClient: builder.mutation({
+        createWorker: builder.mutation({
             query: client =>({
-                url: '/clients/',
+                url: '/workers/',
                 method: 'POST',
                 body: client
             }),
-            invalidatesTags: ['Clients']
+            invalidatesTags: ['Workers']
         }),
         getFilters: builder.query({
             query: ()=>'/filters'
@@ -31,4 +31,4 @@ export const apiSlice = createApi({
     })
 });
 
-export const {useGetClientsQuery, useDeleteClientsMutation, useCreateClientMutation, useGetFiltersQuery} = apiSlice;
+export const {useGetWorkersQuery, useDeleteWorkerMutation, useCreateWorkerMutation, useGetFiltersQuery} = apiSlice;
