@@ -5,6 +5,7 @@ import WorkerItem from '../workerItem/WorkerItem';
 import { useGetWorkersQuery, useDeleteWorkerMutation } from '../../api/apiSlice';
 
 
+
 const WorkersPanel =()=> {
 
     const { 
@@ -41,7 +42,9 @@ const WorkersPanel =()=> {
 
         return arr.map(({id, ...props}) => {
             return(
-                <WorkerItem key={id} {...props} onDelete={()=>onDelete(id)}/>
+    
+                <WorkerItem key={id} {...props}  onDelete={()=>onDelete(id)}/>
+           
             )
         })
     }
