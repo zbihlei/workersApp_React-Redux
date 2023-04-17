@@ -1,41 +1,35 @@
 import '../../styles/index.scss';
 import { useCallback, useMemo } from 'react';
-import {useSelector} from 'react-redux';
 import WorkerItem from '../workerItem/WorkerItem';
-import { useGetWorkersQuery, useDeleteWorkerMutation } from '../../api/apiSlice';
+import { useGetWorkersQuery, useDeleteWorkerMutation,useGetFilteredWorkerQuery, useGetHighSalaryQuery } from '../../api/apiSlice';
 
 
+const WorkersPanel =({activeFilter})=> {
 
-const WorkersPanel =()=> {
-
-    const { 
-        data: workers = [], isLoading
-    } = useGetWorkersQuery();
-
-    const activeFilter = useSelector(state => state.filters.activeFilter);
-    const highSalary = useSelector(state => state.filters.highSalary);
+    const {data: workers = [], isLoading} = useGetWorkersQuery();
+    const {data: filteredWorker = []} = useGetFilteredWorkerQuery(activeFilter);
+    const {data: highSalaryWorkers} = useGetHighSalaryQuery();
     const [deleteWorker]= useDeleteWorkerMutation();
+
 
     const onDelete = useCallback((id)=>{
         deleteWorker(id);
         // eslint-disable-next-line  
     }, []);
 
-    const filteredWorkers = useMemo(()=>{
-
-        if (highSalary === true){
-            return workers.filter(item => item.salary > 1000)
-        } 
-
-        const filteredWorkers = workers.slice();
+    const workerList = useMemo(()=>{
 
         if (activeFilter === 'all'){
-            return filteredWorkers;
-        } else{
-            return filteredWorkers.filter(item => item.position === activeFilter)
+            return workers;
         }
+        if (activeFilter === 'high'){
+            return highSalaryWorkers;
+        }
+        else {
+            return filteredWorker;
+        } 
 
-        }, [workers, activeFilter,highSalary])
+    },[activeFilter, filteredWorker, workers, highSalaryWorkers])
 
 
     const renderWorkers =(arr)=>{
@@ -49,7 +43,7 @@ const WorkersPanel =()=> {
         })
     }
 
-    const workersList = renderWorkers(filteredWorkers);
+    const workersList = renderWorkers(workerList);
         return(
         <>
         {isLoading? <h5 style={{'textAlign': 'center', 'display': 'block', 'padding': '50px', 'color':'rgba(168, 145, 145, 1)'}}>loading...</h5>: null}

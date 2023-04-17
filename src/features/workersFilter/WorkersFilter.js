@@ -1,20 +1,17 @@
 import '../../styles/index.scss';
 import {useGetFiltersQuery} from '../../api/apiSlice';
-import { activeFilterChanged, highSalaryShow } from './WorkersFilterSlice';
-import { useDispatch} from 'react-redux';
 
 
-const WorkersFilter = ()=>{
+const WorkersFilter = ({setActiveFilter})=>{
 
      const {data: filters=[], isLoading, isSuccess} =useGetFiltersQuery();
-     const dispatch = useDispatch();
 
      const renderFilters = (arr) =>{
 
         return arr.map(({name}) =>{
 
             return <button
-            onClick={()=>{dispatch(activeFilterChanged(name)); dispatch(highSalaryShow(false))}}
+            onClick={()=> setActiveFilter(name)}
             key = {name}
             id={name}
             >{name.toUpperCase()}</button>
@@ -35,7 +32,9 @@ const WorkersFilter = ()=>{
                 {elements}
                 {isSuccess ? <button 
                             className='lastBtn'
-                             onClick={()=>dispatch(highSalaryShow(true))} >MORE THAN 1000$</button> : null}
+                            value = 'high'
+                            onClick={(e)=>setActiveFilter(e.target.value)}
+                              >MORE THAN 1000$</button> : null}
                 
             </div>
     )
