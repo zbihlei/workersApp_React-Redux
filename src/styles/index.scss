@@ -28,6 +28,7 @@ body {
     text-align: center;
     border-radius: 15px;
     font-size: 40px;
+    position: relative;
 }
 
 .workerPanelContainer {
@@ -102,6 +103,61 @@ form {
         border: none;
     }
    
+}
+.btn_logout{
+    position: absolute;
+    height: 50px;
+    width: 100px;
+    font-size: 18px;
+    background-color: transparent;
+    right: 0;
+    top: 5px;
+    border: none;
+}
+.formauth{
+    display: flex;
+    flex-wrap: wrap;
+    width: 40%;
+    justify-content: center;
+    input{
+        padding-left: 10px;
+    }
+    input, button{
+        margin-right: 20px;
+        margin-bottom: 20px;
+        width: 300px;
+        height: 30px;
+        outline: none;
+        border: 1px solid black;
+        background-color: transparent;
+    }
+}
+.authpage {
+    @include block;
+    display: grid;
+    height: 100vh;
+    grid-template-areas: 'head''form''link';
+    grid-template-rows: 200px 300px 30px;
+   
+    &_head{
+        grid-area: head;
+        margin:0;
+        background-color: transparent;
+        text-align: center;
+        padding-top: 100px;
+    }
+    &_form{
+        grid-area: form;
+        display: flex;
+        height: 300px;
+        justify-content: center;
+        align-items: center;
+    }
+    &_link{
+        grid-area: link;
+        text-align: center;
+        
+    }
 }
 
 @media (max-width: 960px) {
