@@ -1,4 +1,6 @@
-<img width="994" alt="Знімок екрана 2023-04-03 о 22 11 44" src="https://user-images.githubusercontent.com/36031653/229606330-dc75172b-bab1-48f2-a835-e3140b709d06.png">
+<img width="1440" alt="1" src="https://github.com/zbihlei/workersApp_React-Redux/assets/36031653/df1cde97-637c-4d7c-b53e-104eb39f1dce">
+<img width="1440" alt="2" src="https://github.com/zbihlei/workersApp_React-Redux/assets/36031653/151d4f40-7ded-4870-b9d2-aa2bee766677">
+<img width="1440" alt="3" src="https://github.com/zbihlei/workersApp_React-Redux/assets/36031653/bc482c0d-43d9-463f-86ab-6ca45cbf0ea1">
 
 
 ## Available Scripts
